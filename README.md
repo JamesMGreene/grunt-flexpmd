@@ -98,7 +98,9 @@ The following example configuration will run the default FlexPMD ruleset over al
 ```js
 grunt.initConfig({
   flexpmd: {
-    example1: ['src/']
+    example1: {
+      src: 'src/'
+    }
   }
 });
 ```
@@ -154,6 +156,8 @@ Lint and test your code using [Grunt](http://gruntjs.com/).
 
 
 ## Release History
+ - 0.1.1: Published to NPM on 2014-03-05.
+    - Minor README fix.
  - 0.1.0: Published to NPM on 2014-03-05.
     - Initial release.
 
