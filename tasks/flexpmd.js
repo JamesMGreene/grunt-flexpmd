@@ -221,7 +221,9 @@ module.exports = function(grunt) {
               grunt.fail.errorcount++;
 
               // Show the basics of the violation
-              var pos = '['.red + ('L' + violation.getAttribute('beginline')).yellow + ':'.red + ('C' + violation.getAttribute('begincolumn')).yellow + ']'.red;
+              var lineNum = parseInt(violation.getAttribute('beginline'), 10);
+              var colNum = parseInt(violation.getAttribute('begincolumn'), 10);
+              var pos = '['.red + ('L' + (lineNum < 0 ? 0 : lineNum)).yellow + ':'.red + ('C' + (colNum < 0 ? 0 : colNum)).yellow + ']'.red;
               var reason = violation.childNodes[0].nodeValue;
               grunt.log.writeln(pos + ' ' + reason.yellow);
             }
