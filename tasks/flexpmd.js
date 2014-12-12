@@ -178,7 +178,7 @@ module.exports = function(grunt) {
           if (!grunt.file.isDir(destDir)) {
             grunt.file.mkdir(destDir);
           }
-          grunt.file.copy(dest, outputFile);
+          grunt.file.copy(outputFile, dest);
 
           // Print a success message.
           grunt.log.ok('Report created: "' + dest + '"');
